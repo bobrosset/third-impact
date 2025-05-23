@@ -61,11 +61,17 @@
         }
 
         .logo-section img {
+            position: absolute;
+            margin: auto;
             max-height: 450px;
             height: 100%;
-            transition: all 0.1s ease;
+            transition: opacity 0.5s ease;
             padding: 10px;
             pointer-events: auto;
+        }
+
+        #wide-logo {
+            max-height: 100px;
         }
         
         .section:nth-child(even) {
@@ -179,7 +185,8 @@
 </head>
 <body>
     <header class="logo-section">
-        <img src="https://bobrosset.github.io/third-impact/third-impact.svg" alt="Your Logo">
+        <img id="square-logo" src="https://bobrosset.github.io/third-impact/third-impact.svg" alt="Third Impact">
+        <img id="wide-logo"src="https://bobrosset.github.io/third-impact/third-impact-wide.svg" alt="Third Impact">
         <div class="scroll-indicator">
             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/>
@@ -257,6 +264,8 @@
     <script>
         window.addEventListener('scroll', function() {
             const logoSection = document.querySelector('.logo-section');
+            const squareLogo = document.querySelector('#square-logo');
+            const wideLogo = document.querySelector('#wide-logo');
             const firstSection = document.querySelector('#services');
             const scrollIndicator = document.querySelector('.scroll-indicator');
             const scrollPosition = window.scrollY;
@@ -264,7 +273,7 @@
             
             const scrollProgress = Math.min(scrollPosition / firstSectionHeight, 1);
             
-            const newSize = window.innerHeight - (scrollProgress * (window.innerHeight - 200));
+            const newSize = window.innerHeight - (scrollProgress * (window.innerHeight - 100));
             logoSection.style.height = `${newSize}px`;
             
             // Hide scroll indicator when scrolled
@@ -276,9 +285,13 @@
             
             if (scrollProgress >= 1) {
                 logoSection.classList.add('header');
+                squareLogo.style.opacity = '0';
+                wideLogo.style.opacity = '1';
             } else {
                 logoSection.classList.remove('header');
                 firstSection.style.marginTop = `${scrollPosition + newSize}px`;
+                squareLogo.style.opacity = '1';
+                wideLogo.style.opacity = '0';
             }
         });
     </script>
