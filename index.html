@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Third Impact - The Rare Human Centric Technology Company</title>
-    <meta name="description" content="Third Impact is a human-centric technology company specializing in offshore software development, staff augmentation, and digital product design. We partner with organizations to build meaningful, scalable solutions that align business goals with real human needs.">
+    <meta name="description" content="At Third Impact, we provide tailored technology solutions designed to drive meaningful business outcomes. Our services are structured to support companies at every stage of their digital journey—from concept to scale.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
@@ -17,7 +17,7 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://bobrosset.github.io/third-impact/" />
     <meta property="og:image" content="https://bobrosset.github.io/third-impact/social-media.jpg" />
-    <meta property="og:description" content="Third Impact is a human-centric technology company specializing in offshore software development, staff augmentation, and digital product design. We partner with organizations to build meaningful, scalable solutions that align business goals with real human needs." />
+    <meta property="og:description" content="At Third Impact, we provide tailored technology solutions designed to drive meaningful business outcomes. Our services are structured to support companies at every stage of their digital journey—from concept to scale." />
     <meta property="og:site_name" content="Third Impact" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:image:alt" content="Third Impact - The Rare Human Centric Technology Company" />
@@ -44,6 +44,7 @@
             width: 100%;
             max-height: 100vh;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             background-color: #ffffff;
@@ -64,9 +65,9 @@
             position: absolute;
             margin: auto;
             max-height: 450px;
-            height: 100%;
+            height: calc(100% - 30px);
             transition: opacity 0.5s ease;
-            padding: 10px;
+            padding-bottom: 10px;
             pointer-events: auto;
         }
 
@@ -181,12 +182,21 @@
                 transform: translateX(-50%) translateY(-10px);
             }
         }
+
+        #slogan {
+            font-size: 1.2em;
+            color: #01303f;
+            text-align: center;
+            position: absolute;
+            font-weight: 500;
+        }
     </style>
 </head>
 <body>
     <header class="logo-section">
-        <img id="square-logo" src="https://bobrosset.github.io/third-impact/third-impact.svg" alt="Third Impact">
-        <img id="wide-logo"src="https://bobrosset.github.io/third-impact/third-impact-wide.svg" alt="Third Impact">
+        <img id="square-logo" class="logo" src="https://bobrosset.github.io/third-impact/third-impact.svg" alt="Third Impact">
+        <img id="wide-logo" class="logo" src="https://bobrosset.github.io/third-impact/third-impact-wide.svg" alt="Third Impact">
+        <div id="slogan">The Rare Human Centric Technology Company</div>
         <div class="scroll-indicator">
             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/>
@@ -266,6 +276,7 @@
             const logoSection = document.querySelector('.logo-section');
             const squareLogo = document.querySelector('#square-logo');
             const wideLogo = document.querySelector('#wide-logo');
+            const slogan = document.querySelector('#slogan');
             const firstSection = document.querySelector('#services');
             const scrollIndicator = document.querySelector('.scroll-indicator');
             const scrollPosition = window.scrollY;
@@ -273,7 +284,7 @@
             
             const scrollProgress = Math.min(scrollPosition / firstSectionHeight, 1);
             
-            const newSize = window.innerHeight - (scrollProgress * (window.innerHeight - 100));
+            const newSize = window.innerHeight - (scrollProgress * (window.innerHeight - 120));
             logoSection.style.height = `${newSize}px`;
             
             // Hide scroll indicator when scrolled
@@ -282,16 +293,20 @@
             } else {
                 scrollIndicator.classList.remove('hidden');
             }
+
+            window.aaa = wideLogo;
             
             if (scrollProgress >= 1) {
                 logoSection.classList.add('header');
                 squareLogo.style.opacity = '0';
                 wideLogo.style.opacity = '1';
+                slogan.style.top = `${wideLogo.offsetTop + wideLogo.offsetHeight - 15}px`;
             } else {
                 logoSection.classList.remove('header');
                 firstSection.style.marginTop = `${scrollPosition + newSize}px`;
                 squareLogo.style.opacity = '1';
                 wideLogo.style.opacity = '0';
+                slogan.style.top = `${squareLogo.offsetTop + squareLogo.offsetHeight - 15}px`;
             }
         });
     </script>
