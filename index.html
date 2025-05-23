@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Third Impact - The First Human Centric Technology Company</title>
+    <meta name="description" content="Third Impact is a human-centric technology company specializing in offshore software development, staff augmentation, and digital product design. We partner with organizations to build meaningful, scalable solutions that align business goals with real human needs.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <meta property="og:title" content="third impact - the first human centric technology company" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.third-impact.co" />
+    <meta property="og:image" content="https://www.third-impact.co/social-media.jpg" />
+    <meta property="og:description" content="Third Impact is a human-centric technology company specializing in offshore software development, staff augmentation, and digital product design. We partner with organizations to build meaningful, scalable solutions that align business goals with real human needs." />
+    <meta property="og:site_name" content="Third Impact" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:image:alt" content="Third Impact - The First Human Centric Technology Company" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Manrope', sans-serif;
+            line-height: 1.6;
+            background-color: #01303f;
+            color: #ececec;
+        }
+
+        .logo-section {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #ffffff;
+            background-image: linear-gradient(180deg,rgba(255, 255, 255, 1) 0%, rgba(224, 224, 224, 1) 100%);
+            background-size: auto 100%;
+            transition: background-position 0.5s ease-in-out, box-shadow 1s;
+            z-index: 1000;
+            box-shadow: 0;
+            pointer-events: none;
+            border-bottom: 1px solid white;
+        }
+
+        .logo-section.header {
+            box-shadow: 0 4px 4px rgba(0,0,0,0.3);
+        }
+
+        .logo-section img {
+            max-height: 450px;
+            height: 100%;
+            transition: all 0.1s ease;
+            padding: 10px;
+            pointer-events: auto;
+        }
+        
+        .section:nth-child(even) {
+            background-color: #01303f;
+            color: #ececec;
+        }
+
+        .section:nth-child(odd) {
+            background-color: #ececec;
+            color: #01303f;
+        }
+
+        .section:first-of-type {margin-top: 100vh;}
+
+        .section {
+            min-height: 100vh;
+            padding: 100px 20px 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .section-content p, .section-content ul {
+            text-align: justify;
+            margin-bottom: 10px;
+        }
+
+        .section-content li {
+            margin-left: 30px;
+            margin-bottom: 10px;
+            padding-left: 15px;
+        }
+
+        .service-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            margin-bottom: 30px;
+            font-size: 2em;
+            text-align: center;
+            text-transform: uppercase;
+            text-shadow: 0 4px 4px rgba(0,0,0,0.3);
+        }
+
+        h3 {
+            margin: 10px 0;
+            text-align: left;
+        }
+
+        @media (max-width: 768px) {
+            .section {
+                padding: 80px 15px 30px;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 30px;
+            height: 30px;
+            opacity: 0.7;
+            animation: bounce 2s infinite;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .scroll-indicator.hidden {
+            opacity: 0;
+        }
+
+        .scroll-indicator svg {
+            width: 100%;
+            height: 100%;
+            fill: #01303f;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            40% {
+                transform: translateX(-50%) translateY(-20px);
+            }
+            60% {
+                transform: translateX(-50%) translateY(-10px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="logo-section">
+        <img src="./third-impact.svg" alt="Your Logo">
+        <div class="scroll-indicator">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/>
+            </svg>
+        </div>
+    </header>
+
+    <section id="services" class="section">
+        <div class="section-content">
+            <h2>Our Services</h2>
+            <p>At <strong>Third Impact</strong>, we provide tailored technology solutions designed to drive meaningful business outcomes. Our services are structured to support companies at every stage of their digital journey—from concept to scale.</p>
+            <h3>What we offer:</h3>
+            <ul>
+                <li>
+                    <p class="service-title">Offshore Software Development.</p>
+                    <p>High-quality engineering teams in strategic locations across the Americas, ensuring scalability, cost-efficiency, and consistent delivery.</p>   
+                </li>
+
+                <li>
+                    <p class="service-title">Staff Augmentation.</p>
+                    <p>Integrate world-class talent into your existing teams. We help you scale fast, reduce overhead, and maintain high development standards.</p>
+                </li>
+
+                <li>
+                    <p class="service-title">Product Development & Prototyping.</p>
+                    <p>We help bring your vision to life through rapid prototyping and end-to-end product development, combining design, technology, and strategy.</p>
+                </li>
+
+                <li>
+                    <p class="service-title">Technical Advisory.</p>
+                    <p>From architecture reviews to long-term technology strategy, our senior consultants provide the insights you need to make sound technical decisions.</p>
+                </li>
+            </ul>
+            <p>Every service is grounded in transparency, measurable results, and a long-term partnership mindset.</p>
+        </div>
+    </section>
+
+    <section id="philosophy" class="section">
+        <div class="section-content">
+            <h2>Our Philosophy</h2>
+            <p>Technology alone doesn't create impact—people do. At <strong>Third Impact</strong>, we believe that innovation is most powerful when it centers on people.</p>
+
+            <p>We are a human-centric company, driven by the conviction that long-term value comes from aligning business goals with human needs—those of users, teams, and communities. That's why we build close, collaborative relationships with our partners and invest in understanding the people behind the problem.</p>
+
+            <h3>Our approach prioritizes:</h3>
+
+            <ul>
+                <li>
+                    <p class="service-title">Human insight.</p>
+                    <p>We listen first. Understanding people is our starting point for solving problems.</p>
+                </li>
+
+                <li>
+                    <p class="service-title">Responsible technology.</p>
+                    <p>We create solutions that are thoughtful, ethical, and future-conscious.</p>
+                </li>
+
+                <li>
+                    <p class="service-title">Collaboration as a mindset.</p>
+                    <p>We don't work for clients—we work with them, as part of their team.</p>
+                </li>
+            </ul>
+
+            <p>We're here to create technology that matters, for businesses, and for the people they serve.</p>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="section-content">
+            <h2>Contact Us</h2>
+            <p>Add your contact information here...</p>
+        </div>
+    </section>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const logoSection = document.querySelector('.logo-section');
+            const scrollIndicator = document.querySelector('.scroll-indicator');
+            const scrollPosition = window.scrollY;
+            const firstSectionHeight = window.innerHeight;
+            
+            const scrollProgress = Math.min(scrollPosition / firstSectionHeight, 1);
+            
+            const newSize = window.innerHeight - (scrollProgress * (window.innerHeight - 200));
+            logoSection.style.maxHeight = `${newSize}px`;
+            
+            // Hide scroll indicator when scrolled
+            if (scrollProgress > 0.1) {
+                scrollIndicator.classList.add('hidden');
+            } else {
+                scrollIndicator.classList.remove('hidden');
+            }
+            
+            if (scrollProgress >= 1) {
+                logoSection.classList.add('header');
+            } else {
+                logoSection.classList.remove('header');
+            }
+        });
+    </script>
+</body>
+</html>
