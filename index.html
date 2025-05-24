@@ -53,7 +53,6 @@
             transition: background-position 0.5s ease-in-out, box-shadow 1s;
             z-index: 1000;
             box-shadow: 0;
-            pointer-events: none;
             border-bottom: 1px solid white;
         }
 
@@ -65,14 +64,10 @@
             position: absolute;
             margin: auto;
             max-height: 450px;
-            height: calc(100% - 30px);
+            height: 100%;
             transition: opacity 0.5s ease;
-            padding-bottom: 10px;
+            padding: 10px;
             pointer-events: auto;
-        }
-
-        #wide-logo {
-            max-height: 100px;
         }
         
         .section:nth-child(even) {
@@ -80,6 +75,7 @@
             background-image: linear-gradient(180deg,#0b4456 0%, #01303f 100%);
             background-size: auto 100%;
             color: #ececec;
+            box-shadow: inset 0 0 10px #01303f;
         }
 
         .section:nth-child(odd) {
@@ -146,6 +142,10 @@
             h2 {
                 font-size: 1.5em;
             }
+
+            .logo-section img {
+                padding: 0;
+            }
         }
 
         .scroll-indicator {
@@ -157,8 +157,10 @@
             height: 30px;
             opacity: 0.7;
             animation: bounce 2s infinite;
-            pointer-events: none;
             transition: opacity 0.3s ease;
+            cursor: pointer;
+            pointer-events: auto;
+            z-index: 1001;
         }
 
         .scroll-indicator.hidden {
@@ -196,7 +198,7 @@
     <header class="logo-section">
         <img id="square-logo" class="logo" src="https://bobrosset.github.io/third-impact/third-impact.svg" alt="Third Impact">
         <img id="wide-logo" class="logo" src="https://bobrosset.github.io/third-impact/third-impact-wide.svg" alt="Third Impact">
-        <div id="slogan">The Rare Human Centric Technology Company</div>
+        <!-- <div id="slogan">The Rare Human Centric Technology Company</div> -->
         <div class="scroll-indicator">
             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/>
@@ -204,42 +206,43 @@
         </div>
     </header>
 
+    <section id="who-we-are" class="section">
+        <div class="section-content">
+            <h2>Who we are</h2>
+            <p><strong>Seasoned Technologists</strong></p>
+            <p>We are led by executives who have led Technology Organizations for start ups and $1B+ companies.  We have seen and know what it takes to go from 0 to 1B.</p>
+
+            <p><strong>Strong Leadership</strong></p>
+            <p>We have a certified executive coach and a history of developing technology organizations, leaders and cultures.</p>
+        </div>
+    </section>
+    
     <section id="services" class="section">
         <div class="section-content">
-            <h2>Our Services</h2>
-            <p>At <strong>Third Impact</strong>, we provide tailored technology solutions designed to drive meaningful business outcomes. Our services are structured to support companies at every stage of their digital journey—from concept to scale.</p>
-            <h3>What we offer:</h3>
-            <ul>
-                <li>
-                    <p class="service-title">Offshore Software Development.</p>
-                    <p>High-quality engineering teams in strategic locations across the Americas, ensuring scalability, cost-efficiency, and consistent delivery.</p>   
-                </li>
+            <h2>What we offer</h2>
+            <p><strong>Offshore Software Development</strong></p>
+            <p>High-quality engineering teams in strategic locations across the Americas, ensuring scalability, cost-efficiency, and consistent delivery.</p>
 
-                <li>
-                    <p class="service-title">Staff Augmentation.</p>
-                    <p>Integrate world-class talent into your existing teams. We help you scale fast, reduce overhead, and maintain high development standards.</p>
-                </li>
+            <p><strong>Staff Augmentation</strong></p>
+            <p>Integrate world-class talent into your existing teams. We help you scale fast, reduce overhead, and maintain high development standards.</p>
 
-                <li>
-                    <p class="service-title">Product Development & Prototyping.</p>
-                    <p>We help bring your vision to life through rapid prototyping and end-to-end product development, combining design, technology, and strategy.</p>
-                </li>
+            <p><strong>Product Development & Prototyping</strong></p>
+            <p>We help bring your vision to life through rapid prototyping and end-to-end product development, combining design, technology, and strategy.</p>
 
-                <li>
-                    <p class="service-title">Technical Advisory.</p>
-                    <p>From architecture reviews to long-term technology strategy, our senior consultants provide the insights you need to make sound technical decisions.</p>
-                </li>
-            </ul>
+            <p><strong>Technical Advisory</strong></p>
+            <p>From architecture reviews to long-term technology strategy, our senior consultants provide the insights you need to make sound technical decisions.</p>
+
             <p>Every service is grounded in transparency, measurable results, and a long-term partnership mindset.</p>
+
         </div>
     </section>
 
     <section id="philosophy" class="section">
         <div class="section-content">
             <h2>Our Philosophy</h2>
-            <p>Technology alone doesn't create impact—people do. At <strong>Third Impact</strong>, we believe that innovation is most powerful when it centers on people.</p>
+            <p>Technology alone doesn't create impact—people do. At Third Impact, we believe that innovation is most powerful when it centers on people.</p>
 
-            <p>We are a human-centric company, driven by the conviction that long-term value comes from aligning business goals with human needs—those of users, teams, and communities. That's why we build close, collaborative relationships with our partners and invest in understanding the people behind the problem.</p>
+            <p>We are a human-centric company, driven by the conviction that long-term value comes from aligning business goals with human needs—those of users, teams, and communities. That’s why we build close, collaborative relationships with our partners and invest in understanding the people behind the problem.</p>
 
             <h3>Our approach prioritizes:</h3>
 
@@ -256,7 +259,7 @@
 
                 <li>
                     <p class="service-title">Collaboration as a mindset.</p>
-                    <p>We don't work for clients—we work with them, as part of their team.</p>
+                    <p>We don't work for clients. We work with them, as part of their team.</p>
                 </li>
             </ul>
 
@@ -272,13 +275,23 @@
     </section>
 
     <script>
+        const squareLogo        = document.querySelector('#square-logo');
+        const wideLogo          = document.querySelector('#wide-logo');
+        const slogan            = document.querySelector('#slogan');
+        const firstSection      = document.querySelector('.section');
+        const scrollIndicator   = document.querySelector('.scroll-indicator');
+
+        squareLogo.style.opacity = '1';
+        wideLogo.style.opacity = '0';
+
+        scrollIndicator.onclick = function() {
+            console.log('scrollIndicator.onclick');
+            firstSection.scrollIntoView({ behavior: 'smooth' });
+        };
+
         window.addEventListener('scroll', function() {
             const logoSection = document.querySelector('.logo-section');
-            const squareLogo = document.querySelector('#square-logo');
-            const wideLogo = document.querySelector('#wide-logo');
-            const slogan = document.querySelector('#slogan');
-            const firstSection = document.querySelector('#services');
-            const scrollIndicator = document.querySelector('.scroll-indicator');
+            
             const scrollPosition = window.scrollY;
             const firstSectionHeight = window.innerHeight;
             
@@ -293,20 +306,16 @@
             } else {
                 scrollIndicator.classList.remove('hidden');
             }
-
-            window.aaa = wideLogo;
             
-            if (scrollProgress >= 1) {
+            if (scrollProgress == 1) {
                 logoSection.classList.add('header');
                 squareLogo.style.opacity = '0';
                 wideLogo.style.opacity = '1';
-                slogan.style.top = `${wideLogo.offsetTop + wideLogo.offsetHeight - 15}px`;
             } else {
                 logoSection.classList.remove('header');
                 firstSection.style.marginTop = `${scrollPosition + newSize}px`;
                 squareLogo.style.opacity = '1';
                 wideLogo.style.opacity = '0';
-                slogan.style.top = `${squareLogo.offsetTop + squareLogo.offsetHeight - 15}px`;
             }
         });
     </script>
